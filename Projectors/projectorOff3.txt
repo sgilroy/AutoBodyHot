@@ -1,0 +1,4 @@
+18.85.55.224 4352
+wait "PJLINK 0"
+send "%1POWR 0\m"
+wait "%1POWR=OK"

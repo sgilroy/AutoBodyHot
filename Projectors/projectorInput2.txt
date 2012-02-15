@@ -1,0 +1,6 @@
+18.85.55.223 4352
+wait "PJLINK 0"
+send "%1INPT 31\m"
+wait "%1INPT=OK"
+send "%1INPT ?\m"
+wait "%1INPT=31"
