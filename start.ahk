@@ -1,5 +1,5 @@
 #include GatherWindows.ahk
-#include MultiMonitor.ahk
+;#include MultiMonitor.ahk
 
 if (!DllCall("User32\OpenInputDesktop","int",0*0,"int",0*0,"int",0x0001L*1))
 {
