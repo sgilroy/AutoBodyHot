@@ -99,7 +99,7 @@ MouseMove, %mX%,%mX%,0
 ; SHOW Blank Window
 Gui, 2:Color, 000000
 Gui, 2: +AlwaysOnTop -Caption
-Gui, 2:Show, NoActivate w%mX% h%mX% x%screenX% y%screenY%,cover
+Gui, 2:Show, NoActivate w%mX% h%mX% x%screenX% y%screenY%,LockUP_cover
 
 ; HANDLE RDP Lockout
 SysGet, rdp, 4096
@@ -159,7 +159,7 @@ If pwdu <> %pwd%
 
 ButtonCancel:
 WinShow ahk_class Shell_TrayWnd
-FileDelete locked.bmp
+;FileDelete locked.bmp
 ExitApp ; The only way for an OnExit script to terminate itself is to use ExitApp in the OnExit subroutine.
 
 ;|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||

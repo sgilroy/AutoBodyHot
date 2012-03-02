@@ -2,7 +2,7 @@
 ; "Gather" windows on a specific screen.
 ;
 
-GatherWindows(md=1)
+GatherWindows(md=1, shouldResize=false)
 {
     global ProcessGatherExcludeList
     
@@ -60,7 +60,7 @@ GatherWindows(md=1)
         msh := mon%ms%Bottom - msy
         
         ; If the window is resizable, scale it by the monitors' resolution difference.
-        if (IsResizable()) {
+        if (shouldResize && IsResizable()) {
             w *= (mdw/msw)
             h *= (mdh/msh)
         }

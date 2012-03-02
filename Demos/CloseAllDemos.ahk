@@ -5,6 +5,7 @@ GroupAdd, DemoWindowsExclude, ahk_class SideBar_AppBarWindow
 ; These two come in pairs for the Vista sidebar gadgets:
 GroupAdd, DemoWindowsExclude, ahk_class SideBar_HTMLHostWindow   ; gadget content
 GroupAdd, DemoWindowsExclude, ahk_class BasicWindow              ; gadget shadow/outline
+GroupAdd, DemoWindowsExclude, LockUP_cover              ; gadget shadow/outline
 
 ; Comma-delimited list of processes to exclude.
 ; We exclude ALL windows belonging to these processes
@@ -41,10 +42,12 @@ Loop, %win%
 
     ), CloseAllDemos.log
     
-	if (procname == "Community Core Vision.exe")
+	if (procname == "CCV.exe")
 	{
-		WinActivate, ahk_id %windowName%
-		Send {Esc}
+;		WinActivate, ahk_id %windowName%
+;		Send {Esc}
+		WinClose, ahk_id %windowName%
+		WinWaitClose, ahk_id %windowName%
 	}
 	else
 	{
