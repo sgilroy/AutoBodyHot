@@ -9,22 +9,12 @@ RunWait, CloseAllDemos.ahk
 
 SetWorkingDir, C:\Program Files\Scalable Display2\release\
 RunWait, UnwarpDesktop.bat
-;Run, ScalableControlPanel.exe
-;WinWait, ScalableDesktop
-;WinActivate, ScalableDesktop
-;; Playback
-;Send {Tab}{Tab}{Tab}{Tab}{Tab}{Tab}
-;Send {Enter}
-;Sleep 200
-;; Disengage
-;Send {Tab}{Tab}
-;Send {Enter}
-;
-;; close the ScalableDesktop window
-;;WinClose, ScalableDesktop
-;Send !{F4}
-;WinWaitClose, ScalableDesktop
 
 SetWorkingDir, %A_ScriptDir%\Projectors
 RunWait, stop_projectors.ahk
 RunWait, disable_projectors_display.ahk
+
+; Sleep a bit before we try to change the cover
+Sleep, 3000
+SetWorkingDir, %A_ScriptDir%\SoftDesktopLock
+Run, UpdateDesktopCover.ahk

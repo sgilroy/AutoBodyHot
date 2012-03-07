@@ -15,6 +15,9 @@ Sleep 200
 GatherWindows(2)
 ;MoveTaskBar("\\.\DISPLAY1")
 
+SetWorkingDir, %A_ScriptDir%\SoftDesktopLock
+Run, UpdateDesktopCover.ahk
+
 SetWorkingDir, C:\Program Files\Scalable Display2\release\
 RunWait, WarpDesktop.bat
 ;Run, ScalableControlPanel.exe

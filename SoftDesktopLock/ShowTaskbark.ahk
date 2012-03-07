@@ -1,0 +1,1 @@
+WinShow ahk_class Shell_TrayWnd

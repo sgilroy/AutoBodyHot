@@ -9,7 +9,7 @@ GroupAdd, DemoWindowsExclude, LockUP_cover              ; gadget shadow/outline
 
 ; Comma-delimited list of processes to exclude.
 ; We exclude ALL windows belonging to these processes
-DemoProcessesExcludeList = chrome.exe,explorer.exe,Dwm.exe,WerFault.exe,notepad++.exe,taskmgr.exe
+DemoProcessesExcludeList = chrome.exe,explorer.exe,Dwm.exe,WerFault.exe,notepad++.exe,taskmgr.exe,mstsc.exe
 
 ; List all visible windows.
 WinGet, win, List
@@ -48,6 +48,16 @@ Loop, %win%
 ;		Send {Esc}
 		WinClose, ahk_id %windowName%
 		WinWaitClose, ahk_id %windowName%
+	}
+	else if (procname == "javaw.exe")
+	{
+		; full screen (present mode) Processing applications don't exit as expected from WinClose, so use Esc key instead/in addition
+		WinClose, ahk_id %windowName%
+		IfWinExist, ahk_id %windowName%"
+		{
+			WinActivate
+			Send {Esc}
+		}
 	}
 	else
 	{
